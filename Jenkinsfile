@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Multiline shell steps works too"
+                    echo "This is to trigger build"
                     ls -lah
                 '''
             }
