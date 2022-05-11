@@ -1,9 +1,18 @@
 pipeline {
-    agent { docker { image 'python:3.10.1-alpine' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'echo "Hello World"'
+                sh "echo 'Hello World Build Again'"
+                
+            }
+        }
+        stage('BuildMore') {
+            steps {
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
